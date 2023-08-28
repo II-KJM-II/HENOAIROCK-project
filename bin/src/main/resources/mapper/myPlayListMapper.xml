@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MyPlayList">
+  
+  <select id="selectList" parameterType="MyPlayList" resultType="MyPlayList">
+		SELECT  TT1.rnum as num,
+		        TT1.album_path as albumImg,
+		        TT1.title,
+		        TT1.album,
+		        TT1.artist,
+		        TT1.feeling,
+		        TT1.yt_link
+		FROM(
+		    SELECT ROWNUM as rnum, T1.*
+		    FROM(
+		        SELECT *
+		        FROM music a
+		        JOIN myplaylist b ON a.music_id = b.music_id
+		        WHERE user_id = #{userId}
+		        AND feeling = #{feeling}
+		        AND mylist_div = #{myListDiv}
+		        ORDER BY public_dt DESC
+		    )T1
+          <![CDATA[     WHERE ROWNUM <= #{pageSize} * (#{pageNo}-1)+#{pageSize}   ]]>
+		)TT1
+       <![CDATA[   WHERE rnum >=#{pageSize} * (#{pageNo}-1)+ 1 ]]>
+  </select>
+  
+  <insert id="LikeListSave" parameterType="MyPlayList">
+  <selectKey keyProperty="myListSeq" resultType="string" order="BEFORE">
+         SELECT MY_LIST_SEQ.NEXTVAL FROM DUAL
+  </selectKey>
+    INSERT INTO MYPLAYLIST (mylist_seq, user_id, mylist_div) 
+    VALUES (#{myListSeq} , #{userId}, 10)   
+  </insert>
+  
+  <insert id="saveLikeMusic" parameterType="MyPlayList">
+    INSERT INTO MYPLAYLIST_DETAIL (mylist_seq, user_id, music_id, mylist_div)
+    VALUES (#{myListSeq}, #{userId}, #{musicId}, 10)
+  </insert>
+  
+  <select id="selectLikeSeq" parameterType="member" resultType="MyPlayList">
+    SELECT 
+      mylist_seq
+    FROM myplaylist
+    WHERE user_id = #{userId} AND mylist_div = 10
+  </select>
+  
+  <select id="likeList" parameterType="MyPlayList" resultType="MyPlayList">
+    SELECT 
+      A.*, 
+      M.title,
+      M.artist,
+      M.album_path
+    FROM
+    (SELECT
+        *
+        FROM myplaylist_detail
+        WHERE mylist_seq = #{myListSeq}) A
+    LEFT JOIN
+    music M ON A.music_id = M.music_id
+  </select>
+  
+  <delete id="deleteLikeMusic" parameterType="MyPlayList">
+    DELETE FROM MYPLAYLIST_DETAIL
+    WHERE music_id = #{musicId} AND mylist_seq = #{myListSeq}
+  </delete>
+  
+</mapper>

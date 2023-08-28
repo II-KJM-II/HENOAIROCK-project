@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: transform 0.5s ease-in-out;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 279px;
+}
+
+
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.forgot-password {
+    float: right;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-container i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.password-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px;
+    /* Remove the margin-bottom property */
+}
+
+.password-input input[type="password"] {
+    flex: 1;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+.password-input i {
+    /* Remove the margin-left property */
+    cursor: pointer;
+    /* Adjust the positioning of the eye icon */
+    margin-right: 5px;
+}
+
+
+ .transition-link {
+        cursor: pointer;
+        color: #007bff;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .transition-link:hover {
+        color: #0056b3;
+    }
+
+    .container.transition {
+        transform: translateX(-100%);
+    }
+    
+    
+    
+    /* 책넘기기 */
+    
+    .flip-page {
+        animation: flipPage 0.5s forwards;
+    }
+
+    @keyframes flipPage {
+        from {
+            transform: rotateY(0);
+        }
+        to {
+            transform: rotateY(180deg);
+        }
+    }

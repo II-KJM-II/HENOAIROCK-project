@@ -1,0 +1,38 @@
+
+.comment-user {
+  font-weight: bold;
+}
+
+.comment-text {
+  margin-top: 5px;
+}
+
+.comment-time {
+  color: #666;
+  font-size: 12px;
+}
+
+/* 추가된 댓글 입력 영역 스타일 */
+.comment-input {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.comment-input textarea {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.comment-input button {
+    flex-shrink: 0;
+}
+
+
+
+.comment-divider {
+    border-top: 1px solid #ccc;
+    margin-top: 15px;
+    padding-top: 10px;
+}
+
