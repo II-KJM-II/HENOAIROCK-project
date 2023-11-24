@@ -3,7 +3,7 @@
     </div>
     <div style="text-align: left;"> 
     <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 감정에 따른 사용자 노래 AI추천 </h2>  
-    <div style="font-weight: 700; font-size: 15px; text-align: left; color: #282d33;"> 마이페이지에서 내가 좋아요한 곡들을 볼 수 있고 그것에 따른 나만의 앨범 커스텀 가능</li>음악순위에서 사람들이 좋아요 한 노래 기준으로 순위가 나타냄</li>게시판에서 자유롭게 글 작성 및 노래 추천 활용 (욕설이나 비방글은 관리자가 제거 가능)</li>설정에서 로그아웃 회원탈퇴 및 이용약관 서비스약관 등을 볼 수 있게 설정 기능 구현 </div> 
+    <div style="font-weight: 700; font-size: 15px; text-align: left; color: #282d33;"> 마이페이지에서 내가 좋아요한 곡들을 볼 수 있고 그것에 따른 나만의 앨범 커스텀 가능</li> </br>음악순위에서 사람들이 좋아요 한 노래 기준으로 순위가 나타냄</li>게시판에서 자유롭게 글 작성 및 노래 추천 활용 (욕설이나 비방글은 관리자가 제거 가능)</li>설정에서 로그아웃 회원탈퇴 및 이용약관 서비스약관 등을 볼 수 있게 설정 기능 구현 </div> 
     </div>
     <div style="text-align: left;">
     <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🛠️ Tech Stacks </h2> <br> 
